@@ -36,7 +36,11 @@ public class SciFiName
         String relativeName2 = UserInput.getString();
 
         // generate a sciFi name
-   
-        
+        String sciFiFirst = firstName.substring(0,3) + lastName.substring(0,2);
+        String sciFiLast = city.substring(0,2) + school.substring(0,3);
+        int ra = (int)(Math.random() * relativeName1.length());
+        int ra2 = (int)(Math.random() * relativeName2.length());
+        String origin = relativeName1.substring(ra) + relativeName2.substring(ra2);
+        System.out.println("Hello " + sciFiFirst + " " + sciFiLast + " of " + origin + ". Welcome!");
     }
 }
