@@ -1,20 +1,9 @@
 
-/**
- * SciFiName gathers input from a user to generate a custom name that
- * sounds like it could be used in a science fiction book or movie.
- * 
- * @author ckinnard
- * @version 3/4/16
- */
+
 
 public class SciFiName   
 {
-    /**
-     * All input that you privide should be at least three letters long
-     * or the program may crash (but feel free to test this!)
-     * 
-     * For best results, user lowercase letters and do not use spaces in your input
-     */
+
     public static void main()
     {
         System.out.println("If you provide me some information I will provide a Science Fiction name for you.");
@@ -36,11 +25,12 @@ public class SciFiName
         String relativeName2 = UserInput.getString();
 
         // generate a sciFi name
-        String sciFiFirst = firstName.substring(0,3) + lastName.substring(0,2);
-        String sciFiLast = city.substring(0,2) + school.substring(0,3);
+        String sciFiFirst = firstName.substring(0,3).toLowerCase() + lastName.substring(0,2).toLowerCase();
+        String sciFiLast = city.substring(0,2).toLowerCase() + school.substring(0,3).toLowerCase();
         int ra = (int)(Math.random() * relativeName1.length());
         int ra2 = (int)(Math.random() * relativeName2.length());
-        String origin = relativeName1.substring(ra) + relativeName2.substring(ra2);
-        System.out.println("Hello " + sciFiFirst + " " + sciFiLast + " of " + origin + ". Welcome!");
-    }
+        String origin = relativeName1.substring(ra).toLowerCase() + relativeName2.substring(ra2).toLowerCase();
+        System.out.println("Hello " + sciFiFirst.substring(0,1).toUpperCase() + sciFiFirst + " " + sciFiLast.substring(0,1).toUpperCase()+
+                           sciFiLast + " of " + origin.substring(0,1).toUpperCase() + origin + ". Welcome!");
+    }           
 }
